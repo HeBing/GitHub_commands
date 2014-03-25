@@ -36,7 +36,8 @@ git pull
 
 GitHub Pull Requests
 =====================
-If you Want to contribute to another people's pull request, you can do
+If you Want to contribute to another people's pull request, you can do the following:
+
 a. Create a branch of the repository you want to change by
 ```
 git branch master_copy1
