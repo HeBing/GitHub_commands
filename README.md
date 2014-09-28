@@ -1,14 +1,12 @@
 README
 --------------
-I am a GitHub beginner. This repository is intended to serve as a reference of GitHub commands for myself. The commands I organized here were learned from two Youtube videos:
-* [GitHub Tutorial for Beginners](http://www.youtube.com/watch?v=0fKg7e37bQE) by Will Stern.
-* [GitHub PULL Request, Branching, Merging & Team Workflow ](http://www.youtube.com/watch?v=oFYyTZwMyAg) by Will Stern.
+I am new to git and GitHub. This repository is intended to serve as a reference of git and GitHub commands for myself. I will be updating this repository while I am learning new things.
 
 ### GitHub Basics
 
 a. Create a repository on GitHub.com. You can check "Initialize this repository with a README"
-b. Copy the clone URL for this new repository.
-c. On terminal, switch to the a directory and use 
+b. Copy the clone URL for this new repository. On linux, copy SSH. On PC, copy HTTPS.
+c. On terminal, switch to a directory and use 
 ```
 git clone cloneURL
 ```
@@ -20,12 +18,13 @@ git status
 f. Then add all the changes by 
 ```
 git add -A
+git add <selected files>
 ```
 g. Then commit by
 ```
 git commit -m "added content to README"
 ```
-f. Note up till now all the changes have not been sinked onto GitHub.com. So sink them by
+f. Note up till now all the changes have not been sync onto GitHub.com. So sync them by
 ```
 git push
 ```
@@ -34,28 +33,36 @@ g. You can get all pull requests by
 git pull
 ```
 
-### GitHub Pull Requests
+ref:
+* [GitHub Tutorial for Beginners](http://www.youtube.com/watch?v=0fKg7e37bQE) by Will Stern.
+* [GitHub PULL Request, Branching, Merging & Team Workflow ](http://www.youtube.com/watch?v=oFYyTZwMyAg) by Will Stern.
 
-If you Want to contribute to another people's pull request, you can do the following:
+### Pull Requests
 
+If you Want to contribute to open source software on the GitHub, you can do the following:
+
+* If you are a registered collaborator, you can
 a. Create a branch of the repository you want to change by
 ```
 git branch master_copy1
+git checkout master_copy1 # switch to the new branch
+# OR in one step
+git checkout -b master_copy1
 ```
-This will make a complete copy of master. Or if master belongs to another person, you can fork this repository and make changes and send pull request, too.
 
-b. Now you switch  to your new branch and make any changes you want (these won't affect the master) by
+* If you are not a registered collaborator, you can fork the repository on Github.com OR use `git clone`
+
+b. Now you switch to your new branch and make any changes you want (these won't affect the master) by
 ```
-git checkout master_copy1
 # make changes
 git add -A
 git commit -m "made some changes"
 git push
 ```
-c. Go to GitHub.com, you can see a green button saying "compare and send a pull request". You can add comments/messages. Then click "send pull request".
+c. Go to GitHub.com, you can see a green button saying "compare and send a pull request". You can add comments/messages. Then click "send pull request". Note that before sending pull request, the correct workflow is to `git pull --rebase upstream (rebase your work on top of new commits from upstream)`, and then `git push --force origin`, in order to rewrite the history in such a way your own commits are always on top of the commits from the original (upstream) repo.
 
 ### Use Git locally
-I recently realized that you can use git locally. With local git version control, I can commit more often, even with small/trivial changes. I can easily create new experimental branch. Thus I summarize the common commands for my own reference:
+I recently realized that you can use git locally (ahh!). With local git version control, I can commit more often, even with small/trivial changes. I can easily create new experimental branch. Thus I summarize the common commands for my own reference:
 
 ```
 # instead of git clone from github new repository
@@ -103,7 +110,7 @@ git merge source # all non-conflicting commits from source will be added to targ
 * push local git dir to github (e.g., you want to publish your software)
 ```
 git remote add origin git@github.com:username/reponame.git
-git push origin branch name
+git push origin <branchname>
 ```
 
 ref: http://blog.ultranurd.net/2009/01/21/local-version-control-with-git/
