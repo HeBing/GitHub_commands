@@ -32,6 +32,11 @@ g. You can get all pull requests by
 ```
 git pull
 ```
+h. You can update local to master if your local is behind master by
+```
+git remote update
+```
+i. You can use `git ls-files` to list all files registered for version control
 
 ref:
 * [GitHub Tutorial for Beginners](http://www.youtube.com/watch?v=0fKg7e37bQE) by Will Stern.
